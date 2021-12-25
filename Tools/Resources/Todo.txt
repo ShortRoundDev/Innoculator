@@ -1,0 +1,4 @@
+1. Community (IGDA, SDL)
+2. Some SDL pointers/features/docs
+3. Github pointers
+4. Maybe Tile Editor (tooling)
