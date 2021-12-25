@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Game">
+      <UniqueIdentifier>{c8de7975-eafc-4a75-baa1-0ee5f9031290}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game">
+      <UniqueIdentifier>{9a203283-9bc9-4b02-8d04-3bec190bbe74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics">
+      <UniqueIdentifier>{f59396f8-2c91-498f-b30c-158b9f42db2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Graphics">
+      <UniqueIdentifier>{273e319b-c672-4fcd-ad33-37350817ebee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics\Shaders">
+      <UniqueIdentifier>{a0e2f44a-0876-4b06-a511-7d4182e3e976}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Graphics\Shaders">
+      <UniqueIdentifier>{59607291-a417-411e-abb4-4c7667b0643c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Shaders">
+      <UniqueIdentifier>{9be0a753-4ede-4cbe-9ab5-d8c303eaaf5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Shaders\Base">
+      <UniqueIdentifier>{a8fe8ce9-43ae-4522-8524-85664bd94e06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Shaders\WorldObject">
+      <UniqueIdentifier>{f15e1427-9bf5-46d7-9bf8-3658166d74e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Shaders\Base\Types">
+      <UniqueIdentifier>{cb818739-eb75-4dab-a506-0f2c1fdd9b5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Shaders\Base\Projection">
+      <UniqueIdentifier>{1439c132-9934-414d-86bd-365c2523ca7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Shaders\Base\Color">
+      <UniqueIdentifier>{4ebfb0d4-69d2-41ca-a7d6-da26164fe2f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game\John">
+      <UniqueIdentifier>{8954276c-0f85-48ba-9d5f-38113182e12e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\John">
+      <UniqueIdentifier>{b46690bf-59b3-4d5e-9e08-b64f93e30aac}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicsManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Program.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Wall.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="base.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalCBuffer.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Header Files\Graphics\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="LocalShaderIncluder.h">
+      <Filter>Header Files\Graphics\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldObjectCBuffer.h">
+      <Filter>Header Files\Graphics\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="JohnTypes.h">
+      <Filter>Header Files\Game\John</Filter>
+    </ClInclude>
+    <ClInclude Include="JohnLoader.h">
+      <Filter>Header Files\Game\John</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicsManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Program.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Wall.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Source Files\Graphics\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="LocalShaderIncluder.cpp">
+      <Filter>Source Files\Graphics\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="JohnLoader.cpp">
+      <Filter>Source Files\Game\John</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="textures.yaml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="packages.config" />
+    <None Include="models.yaml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="GlobalCBuffer.hlsli">
+      <Filter>Resource Files\Shaders\Base\Types</Filter>
+    </None>
+    <None Include="PixelHeader.hlsli">
+      <Filter>Resource Files\Shaders\Base\Types</Filter>
+    </None>
+    <None Include="PixelInput.hlsli">
+      <Filter>Resource Files\Shaders\Base\Types</Filter>
+    </None>
+    <None Include="VertexHeader.hlsli">
+      <Filter>Resource Files\Shaders\Base\Types</Filter>
+    </None>
+    <None Include="VertexInput.hlsli">
+      <Filter>Resource Files\Shaders\Base\Types</Filter>
+    </None>
+    <None Include="PerspectiveTransform.hlsli">
+      <Filter>Resource Files\Shaders\Base\Projection</Filter>
+    </None>
+    <None Include="WorldObjectCBuffer.hlsli">
+      <Filter>Resource Files\Shaders\WorldObject</Filter>
+    </None>
+    <None Include="WorldObjectPixel.hlsl">
+      <Filter>Resource Files\Shaders\WorldObject</Filter>
+    </None>
+    <None Include="Gamma.hlsli">
+      <Filter>Resource Files\Shaders\Base\Color</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="WorldObjectVertex.hlsl">
+      <Filter>Resource Files\Shaders\WorldObject</Filter>
+    </FxCompile>
+  </ItemGroup>
+</Project>
