@@ -16,7 +16,7 @@ using namespace Microsoft::WRL;
 //forward declarations
 class Shader;
 class Texture;
-class Model;
+class IModel;
 class Camera;
 
 #define GRAPHICS (GraphicsManager::instance)
@@ -36,7 +36,7 @@ public:
 	~GraphicsManager();
 
 	std::map<std::string, Shader*> shaders;
-	std::map<std::string, Model*> models;
+	std::map<std::string, IModel*> models;
 	std::map<std::string, Texture*> textures;
 
 	ComPtr<IDXGISwapChain> swapchain;
@@ -72,7 +72,9 @@ public:
 	void updateGlobalCBuffer(bool useOrthogonal);
 
 	Texture* getTexture(std::string name, std::string path);
-	Model* getModel(std::string name, std::string path);
+	Texture* getTexture(std::string name);
+	Texture* getTexture(std::string name, BYTE* data, size_t size);
+	IModel* getModel(std::string name, std::string path);
 private:
 	bool initInfrastructure();
 	bool initSwapchain();

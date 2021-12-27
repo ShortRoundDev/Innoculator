@@ -12,6 +12,7 @@ class Texture
 {
 public:
 	Texture(ID3D11Device* device, ID3D11DeviceContext* context, std::string path);
+	Texture(ID3D11Device* device, ID3D11DeviceContext* context, BYTE* data, size_t size);
 	~Texture();
 
 	bool status;

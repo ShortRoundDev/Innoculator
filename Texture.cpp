@@ -9,7 +9,6 @@ using namespace DirectX;
 
 Texture::Texture(ID3D11Device* device, ID3D11DeviceContext* context, std::string path)
 {
-
 	std::wstring winPath = std::wstring_convert<std::codecvt_utf8<wchar_t>>().from_bytes(path);
 	HRESULT result = CreateWICTextureFromFile(device, winPath.c_str(), textureResource.GetAddressOf(), textureView.GetAddressOf());
 	if (FAILED(result))
@@ -27,6 +26,26 @@ Texture::Texture(ID3D11Device* device, ID3D11DeviceContext* context, std::string
 
 	status = true;
 }
+
+Texture::Texture(ID3D11Device* device, ID3D11DeviceContext* context, BYTE* data, size_t size)
+{
+	HRESULT result = CreateWICTextureFromMemory(device, (const uint8_t*)data, size, textureResource.GetAddressOf(), textureView.GetAddressOf());
+	if (FAILED(result))
+	{
+		status = false;
+		return;
+	}
+
+	result = textureResource->QueryInterface(IID_ID3D11Texture2D, (void**)texture2D.GetAddressOf());
+	if (FAILED(result))
+	{
+		status = false;
+		return;
+	}
+
+	status = true;
+}
+
 
 Texture::~Texture()
 {

@@ -1,2 +1,4 @@
 Models:
     Wall: Assets/Models/Walls/Wall.obj
+    Plane: Assets/Models/Walls/Plane.obj
+    Wiggle: Assets/Models/MovingBox/rotatedPlane.glb

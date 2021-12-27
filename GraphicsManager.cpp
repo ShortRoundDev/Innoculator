@@ -3,7 +3,9 @@
 
 #include "Camera.h"
 #include "Texture.h"
-#include "Model.h"
+#include "IModel.h"
+#include "WaveFrontModel.h"
+#include "AnimatedModel.h"
 #include "Shader.h"
 
 // ===== CBUFFERS ===== //
@@ -273,7 +275,7 @@ bool GraphicsManager::initRasterizer()
 	rasterDesc.DepthBias = 0;
 	rasterDesc.DepthBiasClamp = 0.0f;
 	rasterDesc.DepthClipEnable = true;
-	rasterDesc.FillMode = D3D11_FILL_SOLID;
+	rasterDesc.FillMode = D3D11_FILL_WIREFRAME;
 	rasterDesc.MultisampleEnable = true;
 	rasterDesc.ScissorEnable = false;
 	rasterDesc.FrontCounterClockwise = false;
@@ -283,6 +285,8 @@ bool GraphicsManager::initRasterizer()
 	{
 		return true;
 	}
+
+	deviceContext->RSSetState(rasterState.Get());
 
 	D3D11_VIEWPORT viewport = { };
 	ZeroMemory(&viewport, sizeof(D3D11_VIEWPORT));
@@ -420,24 +424,62 @@ Texture* GraphicsManager::getTexture(std::string name, std::string path)
 {
 	auto found = textures.find(name);
 	if (found == textures.end()) {
-		Texture* loadTexture = new Texture(device.Get(), deviceContext.Get(), name);
+		if (path.empty()) {
+			return nullptr;
+		}
+		Texture* loadTexture = new Texture(device.Get(), deviceContext.Get(), path);
 		if (loadTexture->status == false) {
 			delete loadTexture;
 			return nullptr;
 		}
 
-		textures[path] = loadTexture;
+		textures[name] = loadTexture;
 		return loadTexture;
 	}
 
 	return found->second;
 }
 
-Model* GraphicsManager::getModel(std::string name, std::string path)
+Texture* GraphicsManager::getTexture(std::string name)
+{
+	return getTexture(name, "");
+}
+Texture* GraphicsManager::getTexture(std::string name, BYTE* data, size_t size)
+{
+	auto found = textures.find(name);
+	if (found == textures.end()) {
+		Texture* loadTexture = new Texture(device.Get(), deviceContext.Get(), data, size);
+		if (loadTexture->status == false) {
+			delete loadTexture;
+			return nullptr;
+		}
+
+		textures[name] = loadTexture;
+		return loadTexture;
+	}
+
+	return found->second;
+
+}
+
+
+IModel* GraphicsManager::getModel(std::string name, std::string path)
 {
 	auto found = models.find(name);
 	if (found == models.end()) {
-		Model* loadModel = new Model(device.Get(), deviceContext.Get(), path);
+		const char* ptr = (path.c_str()) + path.size() - 4;
+		IModel* loadModel = nullptr;
+		if (!strcmp(ptr, ".obj")) {
+			loadModel = new WaveFrontModel(device.Get(), deviceContext.Get(), path);
+		}
+		else if(!strcmp(ptr, ".glb")) {
+			loadModel = new AnimatedModel(path);
+		}
+
+		if (!loadModel) {
+			return nullptr;
+		}
+
 		if (loadModel->status == false) {
 			delete loadModel;
 			return nullptr;

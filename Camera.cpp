@@ -32,7 +32,7 @@ void Camera::update()
 	XMVECTOR positionVec = XMLoadFloat3(&position);
 
 	XMFLOAT3 look = { 0, 0, 1.0f };
-	XMVECTOR lookVec = XMLoadFloat3(&look);
+	lookVec = XMLoadFloat3(&look);
 
 	XMFLOAT3 up = { 0, 1.0f, 0 };
 	XMVECTOR upVec = XMLoadFloat3(&up);
@@ -45,12 +45,9 @@ void Camera::update()
 
 	lookVec = XMVector3TransformCoord(lookVec, rotationMatrix);
 	upVec = XMVector3TransformCoord(upVec, rotationMatrix);
-	lookVec = XMVectorAdd(positionVec, lookVec);
+	XMVECTOR _lookVec = XMVectorAdd(positionVec, lookVec);
 
-	XMFLOAT3 lookLog;
-	XMStoreFloat3(&lookLog, lookVec);
-
-	viewMatrix = XMMatrixLookAtLH(positionVec, lookVec, upVec);
+	viewMatrix = XMMatrixLookAtLH(positionVec, _lookVec, upVec);
 	orthoViewMatrix = XMMatrixLookAtLH({ 0, 0, 0 }, { 0, 0, 1 }, { 0, 1, 0 });
-	skyViewMatrix = XMMatrixLookAtLH(positionVec, lookVec, upVec);
+	skyViewMatrix = XMMatrixLookAtLH(positionVec, _lookVec, upVec);
 }

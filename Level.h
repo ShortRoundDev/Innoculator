@@ -4,11 +4,13 @@
 #include <string>
 
 #include "base.h"
+#include "JohnTypes.h"
 
 //forward declarations:
 
 class Entity;
 class Wall;
+class FloorCeiling;
 
 class Level
 {
@@ -18,9 +20,13 @@ public:
 
 	bool loaded;
 
+	LevelToken* levelToken;
+
 	std::vector<Entity*> entities;
 	Entity* player;
-	Wall** walls;
+	Wall*** walls;
+	FloorCeiling*** floors;
+	FloorCeiling*** ceilings;
 
 	UINT16 width;
 	UINT16 height;
@@ -29,5 +35,5 @@ public:
 	void update();
 
 private:
-	void initWalls(UINT16 width, UINT16 height);
+	void initWalls(LevelToken* token);
 };

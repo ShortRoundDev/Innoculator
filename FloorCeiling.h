@@ -3,33 +3,31 @@
 #include "base.h"
 #include "JohnTypes.h"
 
-class IModel;
 #include <DirectXMath.h>
+
+class Texture;
+class IModel;
+class Shader;
 
 using namespace DirectX;
 
-class Shader;
-class Texture;
-class Model;
-
-class Wall
+class FloorCeiling
 {
 public:
-	Wall(WallToken* token, UINT x, UINT y);
-	~Wall();
-		
-	bool isDoor;
-	IModel* model;
+	FloorCeiling(WallToken* token, bool isFloor, UINT16 x, UINT16 y);
+	~FloorCeiling();
+
 	Texture* texture;
+	IModel* model;
 	Shader* shader;
-	BYTE zone;
-	char* message;
 
 	XMFLOAT4 position;
+
 	void draw();
 	void update();
 
 private:
 	Texture* getTexture(UINT16 tile);
+
 };
 

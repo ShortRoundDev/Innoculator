@@ -16,6 +16,7 @@ public:
 
 	XMFLOAT3 position;
 	XMFLOAT3 rotation;
+	XMVECTOR lookVec;
 
 	XMMATRIX viewMatrix;
 	XMMATRIX orthoViewMatrix;

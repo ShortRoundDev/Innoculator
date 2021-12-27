@@ -1,2 +1,4 @@
 Textures:
-    Player: assets/textures/entities/player/player.png
+    Player: Assets/Textures/Entities/Player/Player.png
+    1: Assets/Textures/Walls/1.png
+    2: Assets/Textures/Walls/2.png
